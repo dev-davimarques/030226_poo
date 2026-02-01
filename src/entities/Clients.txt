@@ -1,0 +1,3 @@
+1001 João Silva 250.00
+1002 Maria Souza -50.00
+1003 Ana Lima 0.00
