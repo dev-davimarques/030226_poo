@@ -2,6 +2,7 @@ package entities;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Locale;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -12,6 +13,8 @@ public class CreditInquiry {
     private final static MenuOption[] choices = MenuOption.values();
 
     public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+
         MenuOption accountType = getRequest();
 
         while (accountType != MenuOption.END) {
@@ -56,7 +59,7 @@ public class CreditInquiry {
 
     // lê registros de arquivo e exibe somente os registros do tipo apropriado
     private static void readRecords (MenuOption accountType){
-        try (Scanner input = new Scanner(Paths.get("/home/davimarques/github-projects/030226_poo/src/entities/Clients.txt"))) {
+        try (Scanner input = new Scanner(Paths.get("/home/davi/github-projects/030226_poo/src/entities/Clients.txt"))) {
             while (input.hasNext()){
                 int accountNumber = input.nextInt();
                 String firstName = input.next();
